@@ -10,6 +10,7 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
 
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
+  this.inputManager.on("sizechange", this.sizechange.bind(this));
   this.inputManager.on("keepPlaying", this.keepPlaying.bind(this));
 
   this.setup();
@@ -57,6 +58,10 @@ GameManager.prototype.restart = function () {
   document.getElementById("Btimer32768").innerHTML = "";
 
 };
+GameManager.prototype.sizechange = function (){
+  this.size= document.getElementById("size").value;
+  this.restart();
+}
 
 // Keep playing after winning (allows going over 2048)
 GameManager.prototype.keepPlaying = function () {

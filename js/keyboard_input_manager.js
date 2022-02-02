@@ -69,6 +69,7 @@ KeyboardInputManager.prototype.listen = function () {
   });
 
   // Respond to button presses
+  this.bindChangeSelect("#size", this.sizechange);
   this.bindButtonPress(".retry-button", this.restart);
   this.bindButtonPress(".restart-button", this.restart);
   this.bindButtonPress(".keep-playing-button", this.keepPlaying);
@@ -131,6 +132,10 @@ KeyboardInputManager.prototype.restart = function (event) {
   event.preventDefault();
   this.emit("restart");
 };
+KeyboardInputManager.prototype.sizechange = function (event) {
+  event.preventDefault();
+  this.emit("sizechange");
+};
 
 KeyboardInputManager.prototype.keepPlaying = function (event) {
   event.preventDefault();
@@ -140,5 +145,10 @@ KeyboardInputManager.prototype.keepPlaying = function (event) {
 KeyboardInputManager.prototype.bindButtonPress = function (selector, fn) {
   var button = document.querySelector(selector);
   button.addEventListener("click", fn.bind(this));
+  button.addEventListener(this.eventTouchend, fn.bind(this));
+};
+KeyboardInputManager.prototype.bindChangeSelect = function (selector, fn) {
+  var button = document.querySelector(selector);
+  button.addEventListener("change", fn.bind(this));
   button.addEventListener(this.eventTouchend, fn.bind(this));
 };

@@ -66,6 +66,10 @@ HTMLActuator.prototype.addTile = function (tile) {
   var position  = tile.previousPosition || { x: tile.x, y: tile.y };
   var positionClass = this.positionClass(position);
 
+
+
+
+
   // We can't use classlist because it somehow glitches when replacing classes
   var classes = ["tile", "tile-" + tile.value, positionClass];
 
@@ -98,6 +102,19 @@ HTMLActuator.prototype.addTile = function (tile) {
   // Add the inner part of the tile to the wrapper
   wrapper.appendChild(inner);
 
+  /*  
+  width: 107px;
+  height: 107px;
+  line-height: 116.25px; 
+  -webkit-transform: translate(0px, 0px);
+  -moz-transform: translate(0px, 0px);
+  transform: translate(0px, 0px); 
+   */
+  var size = document.getElementById("size").value;
+  wrapper.style.width= (428/size)+"px";
+  wrapper.style.height= (428/size)+"px";
+  wrapper.style.lineheight= (428/(size+0.2))+"px";
+  wrapper.style.transform= "translate("+(428/size)*position.x+"px, "+(428/size)*position.y+"px)"; 
   // Put the tile on the board
   this.tileContainer.appendChild(wrapper);
 };
