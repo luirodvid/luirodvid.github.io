@@ -245,7 +245,7 @@ GameManager.prototype.move = function (direction) {
               self.storageManager.setBestScore16(a);
             }
             
-            document.getElementById("Btimer16").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
+            document.getElementById("Btimer16").innerHTML = b == 0 ? "New!" :self.substract(a,b).slice(0, -1);
           }
           if (merged.value === 32  &&  document.getElementById("Btimer32").innerHTML === ""){
             var a = pretty(time);
@@ -257,7 +257,7 @@ GameManager.prototype.move = function (direction) {
               document.getElementById("timer32").innerHTML = a;
               self.storageManager.setBestScore32(a);
             }
-            document.getElementById("Btimer32").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
+            document.getElementById("Btimer32").innerHTML = b == 0 ? "New!" :self.substract(a,b).slice(0, -1);
           }
           if (merged.value === 64  &&  document.getElementById("Btimer64").innerHTML === ""){
             var a = pretty(time);
@@ -266,7 +266,7 @@ GameManager.prototype.move = function (direction) {
               document.getElementById("timer64").innerHTML = a;
               self.storageManager.setBestScore64(a);
             }
-            document.getElementById("Btimer64").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
+            document.getElementById("Btimer64").innerHTML = b == 0 ? "New!" :self.substract(a,b).slice(0, -1);
           }
           if (merged.value === 128  &&  document.getElementById("Btimer128").innerHTML === ""){
             var a = pretty(time);
@@ -275,7 +275,7 @@ GameManager.prototype.move = function (direction) {
               document.getElementById("timer128").innerHTML = a;
               self.storageManager.setBestScore128(a);
             }
-            document.getElementById("Btimer128").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
+            document.getElementById("Btimer128").innerHTML = b == 0 ? "New!" :self.substract(a,b).slice(0, -1);
           }
           if (merged.value === 256  &&  document.getElementById("Btimer256").innerHTML === ""){
             var a = pretty(time);
@@ -284,7 +284,7 @@ GameManager.prototype.move = function (direction) {
               document.getElementById("timer256").innerHTML = a;
               self.storageManager.setBestScore256(a);
             }
-            document.getElementById("Btimer256").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
+            document.getElementById("Btimer256").innerHTML = b == 0 ? "New!" :self.substract(a,b).slice(0, -1);
           }
 
           if (merged.value === 512  &&  document.getElementById("Btimer512").innerHTML === ""){
@@ -294,7 +294,7 @@ GameManager.prototype.move = function (direction) {
               document.getElementById("timer512").innerHTML = a;
               self.storageManager.setBestScore512(a);
             }
-            document.getElementById("Btimer512").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
+            document.getElementById("Btimer512").innerHTML = b == 0 ? "New!" :self.substract(a,b).slice(0, -1);
           }
           if (merged.value === 32768  &&  document.getElementById("Btimer32768").innerHTML === ""){
             var a = pretty(time);
@@ -303,7 +303,7 @@ GameManager.prototype.move = function (direction) {
               document.getElementById("timer32768").innerHTML = a;
               self.storageManager.setBestScore32768(a);
             }
-            document.getElementById("Btimer32768").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
+            document.getElementById("Btimer32768").innerHTML = b == 0 ? "New!" :self.substract(a,b).slice(0, -1);
           }
           if (merged.value === 16384  &&  document.getElementById("Btimer16384").innerHTML === ""){
             var a = pretty(time);
@@ -312,7 +312,7 @@ GameManager.prototype.move = function (direction) {
               document.getElementById("timer16384").innerHTML = a;
               self.storageManager.setBestScore16384(a);
             }
-            document.getElementById("Btimer16384").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
+            document.getElementById("Btimer16384").innerHTML = b == 0 ? "New!" :self.substract(a,b).slice(0, -1);
           }
           if (merged.value === 8192  &&  document.getElementById("Btimer8192").innerHTML === ""){
             var a = pretty(time);
@@ -321,7 +321,7 @@ GameManager.prototype.move = function (direction) {
               document.getElementById("timer8192").innerHTML = a;
               self.storageManager.setBestScore8192(a);
             }
-            document.getElementById("Btimer8192").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
+            document.getElementById("Btimer8192").innerHTML = b == 0 ? "New!" :self.substract(a,b).slice(0, -1);
           }
           if (merged.value === 4096  &&  document.getElementById("Btimer4096").innerHTML === ""){
             var a = pretty(time);
@@ -330,7 +330,7 @@ GameManager.prototype.move = function (direction) {
               document.getElementById("timer4096").innerHTML = a;
               self.storageManager.setBestScore4096(a);
             }
-            document.getElementById("Btimer4096").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
+            document.getElementById("Btimer4096").innerHTML = b == 0 ? "New!" :self.substract(a,b).slice(0, -1);
           }
           if (merged.value === 2048  &&  document.getElementById("Btimer2048").innerHTML === ""){
             self.won=true;
@@ -340,7 +340,7 @@ GameManager.prototype.move = function (direction) {
               document.getElementById("timer2048").innerHTML = a;
               self.storageManager.setBestScore2048(a);
             }
-            document.getElementById("Btimer2048").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
+            document.getElementById("Btimer2048").innerHTML = b == 0 ? "New!" :self.substract(a,b).slice(0, -1);
           }
           if (merged.value === 1024  &&  document.getElementById("Btimer1024").innerHTML === ""){
             var a = pretty(time);
@@ -349,7 +349,7 @@ GameManager.prototype.move = function (direction) {
               document.getElementById("timer1024").innerHTML = a;
               self.storageManager.setBestScore1024(a);
             }
-            document.getElementById("Btimer1024").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
+            document.getElementById("Btimer1024").innerHTML = b == 0 ? "New!" :self.substract(a,b).slice(0, -1);
           }
 
         } else {
