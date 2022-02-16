@@ -208,7 +208,7 @@ GameManager.prototype.move = function (direction) {
 
   // Save the current tile positions and remove merger information
   this.prepareTiles();
-  var that = this;
+  var self = this;
   // Traverse the grid in the right direction and move tiles
   traversals.x.forEach(function (x) {
     traversals.y.forEach(function (y) {
@@ -240,113 +240,116 @@ GameManager.prototype.move = function (direction) {
           if (merged.value === 16  &&  document.getElementById("Btimer16").innerHTML === ""){
             var a = pretty(time);
             var b = document.getElementById("timer16").innerHTML;
-            if(b>a || b == 0){
+            if(self.substract(a,b)<0 || b == 0){
               document.getElementById("timer16").innerHTML = a;
-              that.storageManager.setBestScore16(a);
+              self.storageManager.setBestScore16(a);
             }
             
-            document.getElementById("Btimer16").innerHTML = b == 0 ? "New!" :that.format((a-b).toFixed(2));
+            document.getElementById("Btimer16").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
           }
           if (merged.value === 32  &&  document.getElementById("Btimer32").innerHTML === ""){
             var a = pretty(time);
             var b = document.getElementById("timer32").innerHTML;
-            if(b>a || b == 0){
+            
+            
+            if(self.substract(a,b)<0 || b == 0){
+              
               document.getElementById("timer32").innerHTML = a;
-              that.storageManager.setBestScore32(a);
+              self.storageManager.setBestScore32(a);
             }
-            document.getElementById("Btimer32").innerHTML = b == 0 ? "New!" :that.format((a-b).toFixed(2));
+            document.getElementById("Btimer32").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
           }
           if (merged.value === 64  &&  document.getElementById("Btimer64").innerHTML === ""){
             var a = pretty(time);
             var b = document.getElementById("timer64").innerHTML;
-            if(b>a || b == 0){
+            if(self.substract(a,b)<0 || b == 0){
               document.getElementById("timer64").innerHTML = a;
-              that.storageManager.setBestScore64(a);
+              self.storageManager.setBestScore64(a);
             }
-            document.getElementById("Btimer64").innerHTML = b == 0 ? "New!" :that.format((a-b).toFixed(2));
+            document.getElementById("Btimer64").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
           }
           if (merged.value === 128  &&  document.getElementById("Btimer128").innerHTML === ""){
             var a = pretty(time);
             var b = document.getElementById("timer128").innerHTML;
-            if(b>a || b == 0){
+            if(self.substract(a,b)<0 || b == 0){
               document.getElementById("timer128").innerHTML = a;
-              that.storageManager.setBestScore128(a);
+              self.storageManager.setBestScore128(a);
             }
-            document.getElementById("Btimer128").innerHTML = b == 0 ? "New!" :that.format((a-b).toFixed(2));
+            document.getElementById("Btimer128").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
           }
           if (merged.value === 256  &&  document.getElementById("Btimer256").innerHTML === ""){
             var a = pretty(time);
             var b = document.getElementById("timer256").innerHTML;
-            if(b>a || b == 0){
+            if(self.substract(a,b)<0 || b == 0){
               document.getElementById("timer256").innerHTML = a;
-              that.storageManager.setBestScore256(a);
+              self.storageManager.setBestScore256(a);
             }
-            document.getElementById("Btimer256").innerHTML = b == 0 ? "New!" :that.format((a-b).toFixed(2));
+            document.getElementById("Btimer256").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
           }
 
           if (merged.value === 512  &&  document.getElementById("Btimer512").innerHTML === ""){
             var a = pretty(time);
             var b = document.getElementById("timer512").innerHTML;
-            if(b>a || b == 0){
+            if(self.substract(a,b)<0 || b == 0){
               document.getElementById("timer512").innerHTML = a;
-              that.storageManager.setBestScore512(a);
+              self.storageManager.setBestScore512(a);
             }
-            document.getElementById("Btimer512").innerHTML = b == 0 ? "New!" :that.format((a-b).toFixed(2));
+            document.getElementById("Btimer512").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
           }
           if (merged.value === 32768  &&  document.getElementById("Btimer32768").innerHTML === ""){
             var a = pretty(time);
             var b = document.getElementById("timer32768").innerHTML;
-            if(b>a || b == 0){
+            if(self.substract(a,b)<0 || b == 0){
               document.getElementById("timer32768").innerHTML = a;
-              that.storageManager.setBestScore32768(a);
+              self.storageManager.setBestScore32768(a);
             }
-            document.getElementById("Btimer32768").innerHTML = b == 0 ? "New!" :that.format((a-b).toFixed(2));
+            document.getElementById("Btimer32768").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
           }
           if (merged.value === 16384  &&  document.getElementById("Btimer16384").innerHTML === ""){
             var a = pretty(time);
             var b = document.getElementById("timer16384").innerHTML;
-            if(b>a || b == 0){
+            if(self.substract(a,b)<0 || b == 0){
               document.getElementById("timer16384").innerHTML = a;
-              that.storageManager.setBestScore16384(a);
+              self.storageManager.setBestScore16384(a);
             }
-            document.getElementById("Btimer16384").innerHTML = b == 0 ? "New!" :that.format((a-b).toFixed(2));
+            document.getElementById("Btimer16384").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
           }
           if (merged.value === 8192  &&  document.getElementById("Btimer8192").innerHTML === ""){
             var a = pretty(time);
             var b = document.getElementById("timer8192").innerHTML;
-            if(b>a || b == 0){
+            if(self.substract(a,b)<0 || b == 0){
               document.getElementById("timer8192").innerHTML = a;
-              that.storageManager.setBestScore8192(a);
+              self.storageManager.setBestScore8192(a);
             }
-            document.getElementById("Btimer8192").innerHTML = b == 0 ? "New!" :that.format((a-b).toFixed(2));
+            document.getElementById("Btimer8192").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
           }
           if (merged.value === 4096  &&  document.getElementById("Btimer4096").innerHTML === ""){
             var a = pretty(time);
             var b = document.getElementById("timer4096").innerHTML;
-            if(b>a || b == 0){
+            if(self.substract(a,b)<0 || b == 0){
               document.getElementById("timer4096").innerHTML = a;
-              that.storageManager.setBestScore4096(a);
+              self.storageManager.setBestScore4096(a);
             }
-            document.getElementById("Btimer4096").innerHTML = b == 0 ? "New!" :that.format((a-b).toFixed(2));
+            document.getElementById("Btimer4096").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
           }
           if (merged.value === 2048  &&  document.getElementById("Btimer2048").innerHTML === ""){
             self.won=true;
             var a = pretty(time);
             var b = document.getElementById("timer2048").innerHTML;
-            if(b>a || b == 0){
+            if(self.substract(a,b)<0 || b == 0){
               document.getElementById("timer2048").innerHTML = a;
-              that.storageManager.setBestScore2048(a);
+              self.storageManager.setBestScore2048(a);
             }
-            document.getElementById("Btimer2048").innerHTML = b == 0 ? "New!" :that.format((a-b).toFixed(2));
+            document.getElementById("Btimer2048").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
           }
           if (merged.value === 1024  &&  document.getElementById("Btimer1024").innerHTML === ""){
             var a = pretty(time);
             var b = document.getElementById("timer1024").innerHTML;
-            if(b>a || b == 0){
+            if(self.substract(a,b)<0 || b == 0){
               document.getElementById("timer1024").innerHTML = a;
-              that.storageManager.setBestScore1024(a);
+              self.storageManager.setBestScore1024(a);
             }
-            document.getElementById("Btimer1024").innerHTML = b == 0 ? "New!" :that.format((a-b).toFixed(2));
+            document.getElementById("Btimer1024").innerHTML = b == 0 ? "New!" :((self.substract(a,b)));
           }
 
         } else {
@@ -419,6 +422,25 @@ GameManager.prototype.findFarthestPosition = function (cell, vector) {
 
 GameManager.prototype.movesAvailable = function () {
   return this.grid.cellsAvailable() || this.tileMatchesAvailable();
+};
+
+GameManager.prototype.substract = function (a,b) {
+  c = a.split(":");
+  d = b.split(":");
+  e=0;
+  for(i=0;i<c.length ;i++){
+    e +=c[i]*(60**(c.length  -1-i));
+  }
+  for(i=0;i<d.length ;i++){
+    e -=d[i]*(60**(d.length  -1-i));
+  }
+  
+
+  if(e>0) d= "+"+pretty((e*1000).toFixed(0));
+  else  d= "-"+pretty((e*-1000).toFixed(0));
+  console.log(d);
+  return d;
+ // return pretty(e);
 };
 
 // Check for available matches between tiles (more expensive check)
