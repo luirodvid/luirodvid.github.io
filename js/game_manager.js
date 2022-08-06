@@ -438,7 +438,6 @@ GameManager.prototype.substract = function (a,b) {
 
   if(e>0) d= "+"+pretty((e*1000).toFixed(0));
   else  d= "-"+pretty((e*-1000).toFixed(0));
-  console.log(d);
   return d;
  // return pretty(e);
 };
